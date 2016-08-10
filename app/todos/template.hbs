@@ -1,0 +1,21 @@
+<div class="container">
+<div class="jumbotron">
+	<h2 id="title">Todo Application in Ember.JS</h2>
+</div>
+<div class="row">
+	<div class="col-sm-5">
+		<h3>Todos</h3>
+		<ul class="list-group">
+			{{#each model as |todo|}}
+				{{#link-to 'todos.edit' todo}}
+					<li class="list-group-item {{if todo.isCompleted 'completed'}}">{{todo.title}}</li>
+				{{/link-to}}
+			{{/each}}
+		</ul>
+	</div>
+	<div class="col-sm-7">
+		{{outlet}}
+	</div>
+</div>
+
+</div>
